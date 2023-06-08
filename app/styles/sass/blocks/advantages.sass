@@ -1,0 +1,18 @@
+.advantages
+  &__wrap
+    @include fww-jfcsb
+
+  &__item
+    width: calc( 33.33% - 15px )
+    margin-top: rem(45)
+    transition: $transition
+    
+    &:hover
+      box-shadow: 0px 4px 32px rgba(96, 70, 151, 0.15)
+      background: #FAF8FD
+      
+      .icon
+        background: linear-gradient(90deg, #FEB707 0%, #FCD76C 100%)
+
+  &__item-title
+    margin-bottom: rem(13)    

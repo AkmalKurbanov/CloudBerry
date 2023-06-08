@@ -1,0 +1,67 @@
+.product-list
+  padding: rem(135) 0 rem(55)
+  margin-bottom: rem(80)
+  position: relative
+  overflow: hidden
+
+  ul
+    margin-top: rem(30)
+    padding-left: rem(30)
+
+    li
+      font-size: rem(28)
+      line-height: rem(40)
+      color: $secondary
+
+  &__elem
+    position: absolute
+    max-width: rem(670)
+    width: 100%
+    min-height: rem(670)
+    z-index: -1
+
+    
+
+    span
+      border-radius: 100%
+      border: rem(5) solid #F5F2FB
+      display: block
+      width: rem(433)
+      height: rem(433)
+      position: absolute
+      transform: scale(0)
+      transition: all 5s
+
+      &:first-child
+        left: 0
+        bottom: 0
+        transition-delay: .5s
+
+      &:nth-child(2)
+        right: 0
+        bottom: 0
+        transition-delay: 1.5s
+
+      &:nth-child(3)
+        top: 0
+        left: 0
+        transition-delay: 2.5s
+
+      &:last-child
+        width: rem(278)
+        height: rem(278)
+        bottom: rem(75)
+        left: rem(75)
+        transition-delay: 3.5s
+    
+    &.active
+      span
+        transform: scale(1)
+    
+    &:first-child
+      top: 0
+      right: rem(-150)
+
+    &:last-child
+      bottom: 0
+      left: rem(-150)

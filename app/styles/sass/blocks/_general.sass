@@ -1,5 +1,7 @@
 *
   margin: 0 
+  padding: 0
+  box-sizing: border-box
 
 html,
 body
@@ -13,7 +15,16 @@ body
 
   .content 
     flex: 1 0 auto
-  
+
+img
+  width: 100%
+
+a
+  text-decoration: none
+  transition: $transition
+
+  &:hover
+    color: $primary
 
 .container 
   width: 100% 
@@ -21,7 +32,7 @@ body
   padding-left: rem(15px) 
   margin-right: auto 
   margin-left: auto 
-  max-width: rem(1170px) 
+  max-width: rem(1200px) 
   position: relative 
   box-sizing: border-box
 
@@ -37,3 +48,280 @@ body
   @include xs 
       max-width: 100% 
 
+
+
+.title
+  font-weight: 700
+  line-height: 0
+  margin: 0
+  padding: 0
+
+  &_h1
+    font-size: rem(72)
+
+  &_h2
+    font-size: rem(36)
+    line-height: rem(43)
+
+  &_h3
+    font-size: rem(24)
+    line-height: rem(24)
+  
+  &_h4
+    font-size: rem(20)
+    line-height: rem(22)
+
+  &_h5
+    font-size: rem(18)
+    line-height: rem(20)
+
+  &_primary
+    color: $primary
+
+  &_secondary
+    color: $secondary
+
+  &_light
+    color: $white
+  
+  &_dark
+    color: #4A4A4A
+
+  &_black
+    color: #181818
+
+  &_bicolor
+    span
+      color: $primary
+
+  &_uppercase
+    text-transform: uppercase
+  
+  &_with-small-icon
+    @include aic
+
+    .title__icon
+      width: rem(30)
+      height: rem(30)
+      @include aic-jcc
+      margin-left: rem(15)
+
+      svg
+        width: 100% 
+  
+  &_with-thematic-icon
+    padding-left: rem(25)
+    @include aic
+
+    .icon
+      margin-right: rem(24)
+
+  &_with-line
+    position: relative
+    padding-right: rem(29)
+    display: inline-block
+    
+    &::after
+      position: absolute      
+      content: ''
+      left: 100%
+      top: 50%
+      transform: translateY(-50%)
+      height: rem(2)
+      width: rem(170)
+      background: $primary
+
+.text
+  color: $textcolor
+  font-weight: 500
+  p
+    line-height: rem(25)
+
+
+.icon
+  min-width: rem(60)
+  max-width: rem(60)
+  height: rem(60)
+  background: linear-gradient(135deg, #B89AE5 0%, #A066FC 100%),linear-gradient(0deg, #E3C0F7, #E3C0F7)
+  border: rem(2) solid $secondarylight
+  border-radius: rem(12)
+  @include aic-jcc
+  overflow: hidden
+  transition: $transition
+
+  
+  &__svg
+    width: rem(60)
+    height: rem(60)
+    @include aic-jcc
+
+    svg
+      width: 100%
+
+  &_dark
+    background: #8139FF
+
+.btn
+  text-decoration: none
+  outline: none
+  border: none
+  border: rem(2) solid $secondarylight
+  border-radius: rem(12)
+  background: linear-gradient(270deg, #FEB707 0%, #FCD76C 100%)
+  font-size: rem(17)
+  color: $tertiary
+  font-weight: 500
+  text-align: center
+  @include aic-jcc
+  display: inline-flex
+  padding: rem(10) rem(30)     
+  transition: $transition
+  cursor: pointer
+
+  &:hover
+    background: linear-gradient(270deg, #6e55a3 0%, #9278ca 100%)
+    border-color: $primary
+    color: $primary
+
+.logo
+  max-width: rem(242)
+  width: 100%
+  @include aic-jcc
+
+  svg
+    width: 100%
+
+
+.arch
+  border: rem(15) solid $white       
+  border-radius: rem(200) rem(200) rem(60) rem(60)
+  background: linear-gradient(150.6deg, #CCC5F8 7.79%, #766CC9 100%)
+  box-shadow: -100px 50px 100px rgba(254, 211, 105, 0.15), 100px 50px 100px rgba(139, 73, 244, 0.15)
+  max-width: rem(450)
+  min-width: rem(450)
+  width: 100%
+  min-height: rem(500)
+  max-height: rem(500)
+
+
+
+.justify
+  @include aic-jfcsb
+
+  .text
+    text-align: right
+    p
+      font-weight: 500
+      line-height: rem(28)  
+
+.radial-block-secondary-bg   
+  border: rem(15) solid $white
+  border-radius: rem(50)
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15)
+  background: linear-gradient(126.04deg, #B281FE 0%, #9055FB 52.33%, #9A55DB 100%)      
+
+
+
+.slider-nav
+  @include aic-jfcsb
+  max-width: rem(100)
+  width: 100%
+
+  .slider-btn
+    width: rem(44)
+    height: rem(44)
+    border-radius: 100%
+    border: rem(2) solid $white
+    @include aic-jcc
+    background: $white
+    transition: $transition
+    cursor: pointer
+
+    &:hover
+      border-color:  $secondarylight
+
+.icon-block
+  background: #F9F1FE
+  border: rem(2) solid $white
+  border-radius: rem(40)    
+  padding: rem(0) rem(24) rem(30)
+  
+  .icon  
+    margin-top: rem(-15)
+    margin-bottom: rem(15)
+
+  p
+    font-size: rem(14)
+    font-weight: 500
+    line-height: rem(22)
+
+.social
+  .title
+    line-height: rem(18)
+    margin-bottom: rem(15)
+
+  ul
+    @include aic
+    li
+      list-style: none
+      margin-right: rem(15)
+
+      &:last-child
+        margin-right: 0
+      a
+        overflow: hidden
+        @include aic-jcc
+        width: rem(40)
+        height: rem(40)
+        background: linear-gradient(270deg, #FEB707 0%, #FCD76C 100%)
+        border: 2px solid $secondarylight  
+        border-radius: 100%
+        transition: $transition
+
+        &:hover
+          border-color: $primary
+          background: $secondary
+          
+
+
+
+.input
+  border-bottom: rem(1) solid $secondary
+  @include aic
+
+  textarea
+    padding-top: rem(15)
+    resize: vertical
+    
+  textarea,
+  input
+    min-height: rem(42)
+    width:100%
+    height: 100% 
+    outline: none
+    border: none
+    background: none
+    padding-right: rem(10)
+
+    &::placeholder
+      text-transform: uppercase
+      color: #181818
+      font-size: rem(14)
+      font-weight: 500
+
+.checkbox 
+  @include aic
+  margin-top: rem(12)
+
+  input
+    cursor: pointer
+  
+  label
+    font-size: rem(11)
+    line-height: rem(12)
+    color: #181818
+    margin-left: rem(8)
+    cursor: pointer
+    font-weight: 500
+
+      

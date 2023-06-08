@@ -1,0 +1,123 @@
+.services
+  
+  &__slider-wrap 
+    max-width: rem(1320)
+    width: 100%
+    margin: auto
+    overflow: hidden
+    padding: rem(60) 0
+    position: relative
+
+    &::before,
+    &::after
+      position: absolute
+      content: ''
+      width: rem(75)
+      height: 100%
+      top: 0
+      z-index: 1
+      
+    &::before
+      left: 0
+    
+    &::after
+      right: 0
+
+  &__slider
+    position: relative
+    max-width: rem(1200)
+    margin: auto
+    width: 100%
+    overflow: hidden
+
+    &:hover
+      overflow: visible
+
+    &::before,
+    &::after
+      position: absolute
+      content: ''
+      width: rem(50)
+      height: rem(50)
+      bottom: rem(-15)
+      z-index: 2
+      border-bottom: rem(15) solid $white
+
+    &::before
+      border-left: rem(15) solid $white
+      border-radius: 0 0 0 rem(50)
+      left: rem(-14)
+
+    &::after
+      border-right: rem(15) solid $white
+      border-radius: 0 0 rem(50) 0
+      right: rem(-15)
+
+    
+    .swiper 
+      overflow: visible
+
+  
+  &__slide
+    height: rem(250)
+    cursor: pointer
+    transition: $transition
+    border-radius: rem(40) rem(40) 0 0
+    padding: rem(30)
+    position: relative
+    
+    &:hover
+      height: rem(310)
+      background: linear-gradient(90deg, #FED774 0%, #FDB416 100%)
+      margin-top: rem(-60)
+
+      .services__icon
+        background: #D69400
+
+      .services__title,
+      .services__desc
+        color: #4B4B4B
+
+      .services__more
+        opacity: 1
+        pointer-events: inherit
+        margin-top: rem(35)
+
+  &__item
+    color: $white
+    @include aic-jcc
+    flex-direction: column
+
+  &__icon,
+  &__title
+    margin-bottom: rem(15)
+    transition: $transition
+    text-align: center
+
+  &__desc
+    font-size: rem(16)
+    line-height: rem(18)
+    text-align: center
+    font-weight: 300
+    transition: $transition
+
+  &__more
+    @include aic
+    color: #4b4b4b
+    transition: $transition
+    opacity: 0
+    pointer-events: none
+
+    svg
+      margin-left: rem(5)
+      
+      path
+        transition: $transition
+
+    &:hover
+      color: $tertiary
+
+      svg
+        path
+          fill: $tertiary
+

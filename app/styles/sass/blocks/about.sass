@@ -1,0 +1,57 @@
+.about
+  margin-bottom: rem(80)
+  
+  .justify
+    margin-bottom: rem(60)
+
+
+  &__wrap
+    @include aife-jfcsb
+
+  .title
+    &_with-line
+      margin-bottom: rem(30)  
+
+  &__text
+    display: flex
+
+    .icon
+      margin-right: rem(15)
+    p
+      font-weight: 500 
+      font-size: rem(16)
+
+  &__count-wrap
+    @include aife-jfcfe
+
+  &__count-list
+    max-width: rem(235)
+    width: 100%
+
+  &__count-item
+    text-align: right
+    color: $primary
+    font-weight: 300
+    font-size: rem(55)
+    @include fww
+    
+    align-items: center
+    justify-content: flex-end
+    line-height: rem(60)
+    margin-bottom: rem(30)
+    
+    &:last-child
+      margin-bottom: 0
+
+    span
+      color: $secondary
+      font-size: rem(70)
+      line-height: rem(80)
+
+    p
+      font-size: rem(20)
+      line-height: rem(23)
+      color: $tertiary
+      font-weight: 300
+      width: 100%
+      

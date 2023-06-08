@@ -1,3 +1,86 @@
 .header
+  position: relative
+  z-index: 1
   
-	
+  &__top
+    @include aic-jfcsb
+
+  .contacts
+    @include aic
+
+    &__item
+      margin-right: rem(35)
+      color: $white
+
+      &:last-child
+        margin-right: 0
+
+      &:hover
+        color: $primary
+
+  .lang
+    @include aic
+    background: $white
+    border-radius: rem(12)
+    max-width: rem(110)
+    width: 100%
+    overflow: hidden
+
+    &__item
+      max-width: rem(55)
+      width: 100%
+      height: rem(32)
+      @include aic-jcc
+      border-radius: rem(12)
+      font-size: rem(14)
+      font-weight: 500
+      color: $tertiary
+      position: relative
+
+      span
+        position: relative
+        z-index: 1
+
+      &::before
+        position: absolute
+        content: ''
+        width: calc( 100% - 4px )
+        height: calc( 100% - 4px )
+        background: linear-gradient(270deg, #FEB707 0%, #FCD76C 100%)
+        border: 2px solid $secondarylight
+        border-radius: rem(12)
+        z-index: 0
+        transition: $transition
+
+      &:first-child
+        &::before
+          left: 100%
+
+        &.lang__item_active
+          &::before
+            left: 0
+
+      &:last-child
+        &::before
+          right: 100%
+
+        &.lang__item_active
+          &::before
+            right: 0    
+
+  &__bottom
+    @include aic-jfcsb
+    margin-top: rem(20)
+
+
+  &__bottom-col  
+    &:last-child
+      @include aic
+
+  .nav
+    &__item
+      color: $white  
+      margin-right: rem(35)
+
+      &:hover
+        color: $primary

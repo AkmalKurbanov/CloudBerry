@@ -1,16 +1,19 @@
 // USER VARIABLES SECTION
 
-$mc: #333 // Accent Color
-$fontsize: 16px // Body Font Size
-$tc: #333 // Text Color
+$primary: #FEBD2E // Accent Color
+$secondary: #604697
+$tertiary: #805500
+$secondarylight: #E3C0F6
+$fontsize: 18px // Body Font Size
+$textcolor: #938BA7 // Text Color
 $lineheight: 1.65 // Document Line Height
-$userfont: roboto-oh5, sans-serif // User Font Family
+$userfont: 'Ubuntu', sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
 
-$wc: #fff
-$bc: #000
-$tr: all .3s
+$white: #fff
+$black: #000
+$transition: all .3s
 
 
 // Bootstrap compatible gutter variable => $gutter
@@ -23,6 +26,7 @@ $tr: all .3s
 @import 'blocks/mixins/_rem'
 @import 'blocks/mixins/_media'
 @import 'node_modules/normalize.css/normalize'
+@import 'node_modules/swiper/swiper-bundle.min'
 // @import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
 // @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
 // @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
@@ -42,6 +46,7 @@ $tr: all .3s
 // @include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
 // @include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
 
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic)
 // GENERAL CSS SETTINGS
 
 
@@ -50,7 +55,7 @@ $tr: all .3s
 	color: #666
 
 ::selection
-	background-color: $mc
+	background-color: $primary
 	color: #fff
 
 input, textarea
@@ -64,10 +69,11 @@ body
 	font-family: $userfont
 	font-size: $fontsize
 	line-height: $lineheight
-	color: $tc
+	color: $textcolor
 	min-width: rem(320)
 	position: relative
 	overflow-x: hidden
+	background: #FAFAFA
 
 
 

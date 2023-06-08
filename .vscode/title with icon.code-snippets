@@ -1,0 +1,12 @@
+{
+
+	"title with icon": {
+		"prefix": "titleicon",
+		"body": [
+			".title.title_h2.title_secondary.title_with-thematic-icon",
+			"\t.icon",
+			"\t | $1"
+		],
+		"description": "Log output to console"
+	}
+}

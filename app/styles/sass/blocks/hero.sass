@@ -1,0 +1,83 @@
+.hero
+  min-height: rem(705)
+  padding: rem(25) 0 0
+  position: relative
+  z-index: 1
+
+  &::before
+    position: absolute
+    content: ''
+    width: 100%
+    height: calc( 100% - 40px )
+    background: conic-gradient(from 191.34deg at 79% 73.72%, #A050D0 -11.1deg, #8A48F4 45.67deg, #B28AFD 124.53deg, #8647F5 166.55deg, #D17B6A 230.43deg, #FEFAFB 301.43deg, #A050D0 348.9deg, #8A48F4 405.67deg)
+    top: 0
+
+  .container
+    position: relative
+
+  &__elem
+    position: absolute
+    top: rem(-25)
+    left: rem(-156)
+    
+
+    svg
+      path
+        animation: strokeOffset 5s linear forwards
+        fill: none
+        stroke-dasharray: 1636.488525390625
+        stroke-dashoffset: 1636.488525390625
+
+    @keyframes strokeOffset
+      to
+        stroke-dashoffset: 0
+
+
+  p
+    color: $white
+  
+  &__flex-wrap
+    margin-top: rem(70)
+    @include jfcsb
+    align-items: stretch
+    
+
+  &__title
+    line-height: rem(80)
+    margin-bottom: rem(45)
+
+  
+
+  &__callback  
+    margin-top: rem(40)
+    position: relative
+    z-index: 1
+
+  .callback  
+    @include aic
+
+    &__btn
+      color: $white
+      font-size: rem(17)
+      font-weight: 500
+      @include aic-jcc
+      display: inline-flex
+      margin-left: rem(40)
+
+      &:hover
+        color: $primary
+
+        .callback__btn-icon 
+          border-color: $primary
+          background: $secondary
+
+    &__btn-icon
+      background: $white
+      border-radius: 100%
+      border: rem(2) solid $secondarylight
+      width: rem(50)
+      height: rem(50)
+      @include aic-jcc 
+      margin-right: rem(15)
+      transition: $transition 
+
