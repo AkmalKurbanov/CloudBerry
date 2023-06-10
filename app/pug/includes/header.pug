@@ -1,13 +1,13 @@
-header.header
+header.header#header
   .header__top
     .header__contacts.contacts       
         a(href="tel:+996505225777").contacts__item +996 505 225 777
         a(href="mailto:office@cloudberry.com").contacts__item office@cloudberry.com
     
     .header__lang.lang
-      a(href="#").lang__item.lang__item_active
+      a(href="#").lang__item.lang__item_ru.lang__item_active
         span Рус 
-      a(href="#").lang__item
+      a(href="#").lang__item.lang__item_en
         span Eng
           
   .header__bottom
@@ -16,10 +16,16 @@ header.header
         include ../includes/logo-light
 
     .header__bottom-col
-      .header__nav.nav      
-        each nav in ['О нас','Услуги','Преимущества','География','Контакты']
-          a(href="#").nav__item=nav
-      a.btn(href="#") Поговорим?
+      ul.header__nav.nav
+        mixin nav(item,id)
+          li.nav__item
+            a(href="#"+id data-scroll)=item
+        +nav('О нас','about')  
+        +nav('Услуги','services')  
+        +nav('Преимущества','advantages')  
+        +nav('География','geography')  
+        +nav('Контакты','contacts')
+      a.btn(href="#contacts" data-scroll) Поговорим?
 
       
 

@@ -4,31 +4,88 @@
 	box-shadow: 0px -4px 16px rgba(0, 0, 0, 0.05)
 	
 	&__wrap 
-		@include jfcsb
+		@include fww-jfcsb
+
 	
 	&__col
+		margin-right: rem(15)
+		
+		@media (max-width: 460px)  
+			width: 100%
+			margin-bottom: rem(15)
+
+		&:first-child
+			@include lg
+				width: 100%
+				margin-bottom: rem(30)
+				margin-right: 0
+
 		&:last-child
 			margin-right: 0
 
 	&__top
 		padding: rem(60) 0
+
+		@include md
+			padding: rem(50) 0
+
+		@include sm
+			padding: rem(40) 0
+
+		@include xs
+			padding: rem(30) 0
 	
 	&__bottom	
 		font-size: rem(12)
 		font-weight: 500
 		padding: rem(12) 0
+		
+		.footer__wrap
+			flex-wrap: nowrap
+
+			@include sm
+				flex-direction: column-reverse
 
 		.footer__col
+			width: auto
+			margin: 0
+			
+			@include sm
+				text-align: center
+
 			&:last-child
 				ul
-					@include aic
+					@include aic-jcc
+					
+					@include sm
+						margin-bottom: rem(15) 
+
+					@include xs
+						flex-direction: column
+
 
 					li
 						margin-right: rem(70)
 						margin-top: 0
+						
+						@include lg
+							margin-right: rem(50)
+						
+						@include md
+							margin-right: rem(30)
+						
+						@include sm
+							margin-right: rem(20)
+						
+						@include xs
+							margin-right: 0
+
 
 						&:last-child
 							margin-right: 0
+
+						a
+							font-size: rem(12)
 
 	.logo
 		margin-bottom: rem(30)
@@ -42,6 +99,10 @@
 		li
 			list-style: none
 			margin-top: rem(10)
+			
+			@media (max-width: 460px) 
+				margin-top: rem(5)
+
 			a
 				color: $textcolor	
 				font-size: rem(16)

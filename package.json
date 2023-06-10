@@ -52,6 +52,7 @@
     "jquery-lazy": "^1.7.11",
     "normalize.css": "^8.0.1",
     "save-dev": "^0.0.1-security",
-    "swiper": "^8.4.5"
+    "swiper": "^8.4.5",
+    "aos": "^2.3.4"
   }
 }

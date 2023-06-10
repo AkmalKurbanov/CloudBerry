@@ -2,14 +2,15 @@ import Swiper from "swiper/bundle";
 
 var swiper = new Swiper(".partners-js", {
   loop: true,
+  speed: 1000,
   autoplay: {
     delay: 2500,
     disableOnInteraction: false,
   },
   breakpoints: {
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 20,
+    0: {
+      slidesPerView: 3,
+      spaceBetween: 10,
     },
     768: {
       slidesPerView: 4,
@@ -31,13 +32,17 @@ var swiper = new Swiper(".services-js", {
   },
 
   breakpoints: {
-    640: {
+    576: {
       slidesPerView: 2,
     },
-    768: {
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 15,
+    },
+    1200: {
       slidesPerView: 4,
       spaceBetween: 15,
-    }
+    },
   },
 });
 var swiper = new Swiper(".reviews-js", {

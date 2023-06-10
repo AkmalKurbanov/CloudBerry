@@ -2,10 +2,26 @@
   margin-top: rem(-40)
   margin-bottom: rem(80)
   
+  @include lg
+    margin-top: 0
+    margin-bottom: rem(60)
+  
+  @include md  
+    margin-bottom: rem(50)
+  
+  @include sm
+    margin-bottom: rem(40)
+  
+  @include xs
+    margin-bottom: rem(30)
+
   &__wrap
     padding: rem(60) 0
     background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(129, 57, 255, 0.2) 51.45%, rgba(255, 255, 255, 0) 100%)
-  
+
+    @include lg
+      padding: rem(30) 0
+
   &__item
     min-height: rem(36)
     max-height: rem(36)

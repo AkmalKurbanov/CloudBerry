@@ -1,6 +1,18 @@
 .callback
   margin-bottom: rem(80)
 
+  @include lg
+    margin-bottom: rem(60)
+
+  @include md
+    margin-bottom: rem(50)
+
+  @include sm
+    margin-bottom: rem(40)
+
+  @include xs
+    margin-bottom: rem(30)
+
   .title
     margin-bottom: rem(15)
 
@@ -8,9 +20,39 @@
     @include jfcsb
     margin-top: rem(40)
 
+    @include md
+      flex-wrap: wrap
+
   &__col
     width: calc( 33.33% - 40px )
-    
+
+    @include lg
+      width: calc( 33.33% - 10px )
+
+    @include md
+      width: 100%
+      margin-bottom: rem(30)
+
+    &:first-child
+      @include md
+        order: 2
+        width: calc( 50% - 7px )
+      
+      @include xs
+        width: 100%
+          
+    &:nth-child(2)
+      @include md
+        order: 3
+        margin-bottom: 0
+
+    &:last-child
+      @include md
+        order: 1
+        width: calc( 50% - 7px )
+
+      @include xs
+        width: 100%  
 
   .text
     p
@@ -25,6 +67,9 @@
       margin-top: rem(40)
       text-align: right
 
+      @include lg
+        margin-top: rem(30)
+        text-align: center
 
   &__contacts
     ul
@@ -35,6 +80,11 @@
         font-weight: 400
         margin-bottom: rem(10)
         line-height: rem(25)
+        
+        @include lg
+          font-size: rem(16)
+          line-height: rem(20)
+
         a
           color: #181818
           text-decoration: underline

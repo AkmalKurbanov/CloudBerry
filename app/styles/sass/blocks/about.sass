@@ -1,12 +1,44 @@
 .about
   margin-bottom: rem(80)
+
+  @include lg
+    margin-bottom: rem(60)
+
+  @include md
+    margin-bottom: rem(50)
+  
+  @include sm
+    margin-bottom: rem(40)
+  
+  @include xs
+    margin-bottom: rem(30)
   
   .justify
     margin-bottom: rem(60)
 
+    @include lg
+      margin-bottom: rem(50)
 
+    @include md
+      margin-bottom: rem(40)
+    
+    
   &__wrap
     @include aife-jfcsb
+
+    @include sm
+      flex-direction: column
+      align-items: flex-start
+
+  &__col
+    @include sm
+      width: 100%
+
+    &:first-child
+      margin-right: rem(15)
+
+      @include sm
+        margin-right: 0
 
   .title
     &_with-line
@@ -17,36 +49,102 @@
 
     .icon
       margin-right: rem(15)
+
+      @include lg
+        margin-right: rem(10)
+        
+      @include sm
+        margin-right: rem(5)
+
     p
       font-weight: 500 
       font-size: rem(16)
 
+      @include sm
+        line-height: normal
+
+      br
+        @include sm
+          display: none
+
   &__count-wrap
     @include aife-jfcfe
+
+    @include md
+      flex-direction: column-reverse
+
+    @include sm
+      margin-top: rem(30)
+      align-items: center
+
+    .btn
+      @include lg
+        font-size: rem(16)
+        padding: rem(10) rem(15)
+
+      @include md
+        font-size: rem(13)
+        padding: rem(10) rem(15)
+        border-radius: rem(6)
 
   &__count-list
     max-width: rem(235)
     width: 100%
+    
+    @include lg
+      max-width: rem(200)
+
+    @include sm
+      max-width: 100%
+      @include aifs-jfcsb
+      margin-bottom: rem(15)
+
 
   &__count-item
     text-align: right
     color: $primary
     font-weight: 300
     font-size: rem(55)
+    line-height: rem(60)
     @include fww
-    
     align-items: center
     justify-content: flex-end
-    line-height: rem(60)
     margin-bottom: rem(30)
     
+    @include lg
+      font-size: rem(40)
+      line-height: rem(45)
+      margin-bottom: rem(20)
+
+    @include md
+      font-size: rem(30)
+      line-height: rem(25)
+      margin-bottom: rem(5)
+
+    @include sm
+      justify-content: center
+      text-align: center
+      width: 33.33%
+
     &:last-child
       margin-bottom: 0
+      
+      @include md
+        margin-bottom: rem(10)
 
     span
       color: $secondary
       font-size: rem(70)
       line-height: rem(80)
+    
+      @include lg
+        font-size: rem(55)
+        line-height: rem(65)
+
+      @include md
+        font-size: rem(35)
+        line-height: rem(45)
+
 
     p
       font-size: rem(20)
@@ -54,4 +152,10 @@
       color: $tertiary
       font-weight: 300
       width: 100%
+      
+      @include lg
+        font-size: rem(16)
+        line-height: normal
+      
+        
       

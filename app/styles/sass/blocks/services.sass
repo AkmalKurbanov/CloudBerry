@@ -1,12 +1,23 @@
 .services
-  
-  &__slider-wrap 
+  .justify
+    flex-direction: row
+
+  &__slider-wrap
     max-width: rem(1320)
     width: 100%
     margin: auto
     overflow: hidden
-    padding: rem(60) 0
+    padding: rem(60) rem(15)
     position: relative
+
+    @include lg
+      max-width: rem(1080)
+
+    @include md
+      max-width: rem(840)
+
+    @include sm
+      max-width: rem(670)
 
     &::before,
     &::after
@@ -15,11 +26,11 @@
       width: rem(75)
       height: 100%
       top: 0
-      z-index: 1
-      
+      z-index: 3
+
     &::before
       left: 0
-    
+
     &::after
       right: 0
 
@@ -29,6 +40,15 @@
     margin: auto
     width: 100%
     overflow: hidden
+
+    @include lg
+      max-width: rem(960)
+
+    @include md
+      max-width: rem(720)
+
+    @include sm
+      max-width: rem(540)
 
     &:hover
       overflow: visible
@@ -43,21 +63,59 @@
       z-index: 2
       border-bottom: rem(15) solid $white
 
+      @include lg
+        border-bottom: rem(12) solid $white
+        bottom: rem(-12)
+
+      @include md
+        border-bottom: rem(10) solid $white
+        bottom: rem(-10)
+
+      @include sm
+        border-bottom: rem(8) solid $white
+        bottom: rem(-8)
+
     &::before
       border-left: rem(15) solid $white
       border-radius: 0 0 0 rem(50)
-      left: rem(-14)
+      left: rem(-15)
+
+      @include lg
+        border-left: rem(12) solid $white
+        border-radius: 0 0 0 rem(40)
+        left: rem(-12)
+
+      @include md
+        border-left: rem(10) solid $white
+        border-radius: 0 0 0 rem(30)
+        left: rem(-10)
+
+      @include sm
+        border-left: rem(8) solid $white
+        left: rem(-8)
 
     &::after
       border-right: rem(15) solid $white
       border-radius: 0 0 rem(50) 0
       right: rem(-15)
 
-    
-    .swiper 
+      @include lg
+        border-right: rem(12) solid $white
+        border-radius: 0 0 rem(40) 0
+        right: rem(-12)
+
+      @include md
+        border-radius: 0 0 rem(30) 0
+        border-right: rem(10) solid $white
+        right: rem(-10)
+
+      @include sm
+        border-right: rem(8) solid $white
+        right: rem(-8)
+
+    .swiper
       overflow: visible
 
-  
   &__slide
     height: rem(250)
     cursor: pointer
@@ -65,11 +123,22 @@
     border-radius: rem(40) rem(40) 0 0
     padding: rem(30)
     position: relative
-    
+
+    @include lg
+      padding: rem(20)
+      height: rem(210)
+
     &:hover
       height: rem(310)
       background: linear-gradient(90deg, #FED774 0%, #FDB416 100%)
       margin-top: rem(-60)
+
+      @include lg
+        height: rem(270)
+        border-radius: rem(30) rem(30) 0 0
+
+      @include md
+        border-radius: rem(20) rem(20) 0 0
 
       .services__icon
         background: #D69400
@@ -88,6 +157,12 @@
     @include aic-jcc
     flex-direction: column
 
+  &__icon
+    max-width: rem(40)
+    min-width: rem(40)
+    max-height: rem(40)
+    min-height: rem(40)
+    
   &__icon,
   &__title
     margin-bottom: rem(15)
@@ -110,7 +185,7 @@
 
     svg
       margin-left: rem(5)
-      
+
       path
         transition: $transition
 
@@ -120,4 +195,3 @@
       svg
         path
           fill: $tertiary
-

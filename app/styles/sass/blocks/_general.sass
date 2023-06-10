@@ -8,6 +8,26 @@ body
   height: 100%
   position: relative      
 
+body
+  &::before
+    position: absolute
+    content: ''
+    width: 100%
+    height: 100%
+    position: fixed
+    background: rgba($black, .4)
+    transition: $transition
+    z-index: 5
+    opacity: 0
+    pointer-events: none
+  
+  &.no-scroll
+    overflow: hidden
+    
+    &::before
+      pointer-events: inherit
+      opacity: 1
+
 .wrapper 
   display: flex
   flex-direction: column
@@ -58,18 +78,62 @@ a
 
   &_h1
     font-size: rem(72)
+    
+    @include lg
+      font-size: rem(60)
+
+    @include md
+      font-size: rem(50)
+
+    @include sm
+      font-size: rem(40)
+    
+    @include xs
+      font-size: rem(30)
+
 
   &_h2
     font-size: rem(36)
     line-height: rem(43)
 
+    @include lg
+      font-size: rem(30)
+      line-height: rem(37)
+
+    @include md
+      font-size: rem(25)
+      line-height: rem(32)
+
   &_h3
     font-size: rem(24)
     line-height: rem(24)
+
+    @include lg
+      font-size: rem(23)
+      line-height: rem(23)
+    
+    @include md
+      font-size: rem(22)
+      line-height: rem(22)
   
   &_h4
     font-size: rem(20)
     line-height: rem(22)
+
+    @include lg
+      font-size: rem(19)
+      line-height: rem(21)
+    
+    @include md
+      font-size: rem(18)
+      line-height: rem(20)
+
+    @include sm
+      font-size: rem(17)
+    
+    @include xs
+      font-size: rem(16)
+      
 
   &_h5
     font-size: rem(18)
@@ -112,14 +176,32 @@ a
   &_with-thematic-icon
     padding-left: rem(25)
     @include aic
+    
+    @include lg
+      padding-left: rem(15)
+
+    @include md  
+      padding-left: 0
 
     .icon
       margin-right: rem(24)
+      
+      @include lg
+        margin-right: rem(10)
+
+      @include sm
+        margin-right: rem(5)
 
   &_with-line
     position: relative
     padding-right: rem(29)
     display: inline-block
+
+    @include lg
+      padding-right: rem(20)
+    
+    @include md
+      padding-right: rem(15)
     
     &::after
       position: absolute      
@@ -131,11 +213,21 @@ a
       width: rem(170)
       background: $primary
 
+      @include lg
+        width: rem(150)
+      
+      @include md
+        width: rem(130)
+
 .text
   color: $textcolor
   font-weight: 500
   p
     line-height: rem(25)
+    @include lg
+      font-size: rem(16)
+      line-height: normal
+
 
 
 .icon
@@ -148,8 +240,22 @@ a
   @include aic-jcc
   overflow: hidden
   transition: $transition
-
   
+  @include lg
+    min-width: rem(40)
+    max-width: rem(40)
+    height: rem(40)
+    border-radius: rem(6)
+
+  @include sm
+    min-width: rem(25)
+    max-width: rem(25)
+    height: rem(25)
+    border-radius: rem(4)
+
+    svg
+      width: 80%
+
   &__svg
     width: rem(60)
     height: rem(60)
@@ -178,6 +284,17 @@ a
   transition: $transition
   cursor: pointer
 
+  @include lg
+    padding: rem(7) rem(25)     
+    font-size: rem(16)
+    border-radius: rem(10)
+
+  @include md
+    padding: rem(6) rem(20)     
+    font-size: rem(15)
+    border-radius: rem(7)
+
+
   &:hover
     background: linear-gradient(270deg, #6e55a3 0%, #9278ca 100%)
     border-color: $primary
@@ -202,17 +319,75 @@ a
   width: 100%
   min-height: rem(500)
   max-height: rem(500)
+  position: relative
+  overflow: hidden
+
+  @include lg
+    max-width: rem(400)
+    min-width: rem(400)
+    width: 100%
+    min-height: rem(450)
+    max-height: rem(450)
+    border-radius: rem(170) rem(170) rem(50) rem(50)
+
+  @include md
+    max-width: rem(290)
+    min-width: rem(290)
+    width: 100%
+    min-height: rem(340)
+    max-height: rem(340)
+    border-radius: rem(120) rem(120) rem(30) rem(30)
+    border-width: rem(10)
+
+  @include sm
+    margin: 0 auto      
+    margin-top: rem(30)
+    border-radius: rem(10) rem(30) rem(90) rem(30)
+    max-width: 100%
+    border-width: rem(5)
+    display: none
+
+  img
+    position: absolute
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+
 
 
 
 .justify
   @include aic-jfcsb
 
+  @include md
+    flex-direction: column
+    align-items: flex-start
+
   .text
     text-align: right
+    max-width: rem(600)
+    width: 100%
+    margin-left: rem(15)
+    
+    @include lg
+      max-width: rem(500)
+
+    @include md
+      text-align: left
+      margin-top: rem(20)
+      margin-left: 0  
+
     p
       font-weight: 500
       line-height: rem(28)  
+      
+      @include lg
+        line-height: normal
+      
+      br
+        @include lg
+          display: none
 
 .radial-block-secondary-bg   
   border: rem(15) solid $white
@@ -220,6 +395,17 @@ a
   box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15)
   background: linear-gradient(126.04deg, #B281FE 0%, #9055FB 52.33%, #9A55DB 100%)      
 
+  @include lg
+    border-radius: rem(40)
+    border-width: rem(12)
+
+  @include md
+    border-radius: rem(30)
+    border-width: rem(10)
+
+  @include sm
+    border-radius: rem(25)
+    border-width: rem(8)
 
 
 .slider-nav
@@ -246,6 +432,22 @@ a
   border-radius: rem(40)    
   padding: rem(0) rem(24) rem(30)
   
+  @include lg
+    padding: rem(0) rem(22) rem(28)
+    border-radius: rem(35)    
+
+  @include md
+    padding: rem(0) rem(20) rem(26)
+    border-radius: rem(30)
+
+  @include sm
+    padding: rem(0) rem(18) rem(24)
+    border-radius: rem(25)    
+
+  @include xs
+    padding: rem(0) rem(16) rem(22)
+    border-radius: rem(20)    
+
   .icon  
     margin-top: rem(-15)
     margin-bottom: rem(15)

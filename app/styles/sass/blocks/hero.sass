@@ -3,6 +3,11 @@
   padding: rem(25) 0 0
   position: relative
   z-index: 1
+  overflow: hidden
+  
+  @include lg
+    min-height: rem(500)
+    padding: rem(90) 0 rem(30)
 
   &::before
     position: absolute
@@ -12,6 +17,10 @@
     background: conic-gradient(from 191.34deg at 79% 73.72%, #A050D0 -11.1deg, #8A48F4 45.67deg, #B28AFD 124.53deg, #8647F5 166.55deg, #D17B6A 230.43deg, #FEFAFB 301.43deg, #A050D0 348.9deg, #8A48F4 405.67deg)
     top: 0
 
+    @include lg
+      height: 100%
+
+
   .container
     position: relative
 
@@ -20,6 +29,9 @@
     top: rem(-25)
     left: rem(-156)
     
+    @include lg
+      top: rem(-50)
+
 
     svg
       path
@@ -35,17 +47,75 @@
 
   p
     color: $white
+    
+    @include lg
+      font-size: rem(17)
+    
+    @include md
+      font-size: rem(16)
+      line-height: normal
+
+    br
+      @include lg
+        display: none
+  
+  &__flex-col
+    @include lg
+      width: 100%
+
+    &:first-child
+      margin-right: rem(30)
+      
+      @include lg
+        margin-right: 0
+        max-width: calc( 55% - 15px )
+      
+      @include sm  
+        max-width: 100%
+
+      .arch
+        display: flex
+
+
+    &:last-child
+      @include lg
+        @include jfcfe
+        max-width: calc( 45% - 15px )
+      
+      @include sm  
+        display: none
   
   &__flex-wrap
     margin-top: rem(70)
     @include jfcsb
     align-items: stretch
+
+    @include lg
+      margin-top: 0
+
+    @include sm    
+      flex-direction: column
     
 
   &__title
     line-height: rem(80)
     margin-bottom: rem(45)
+    
+    @include lg
+      line-height: rem(68)
+      margin-bottom: rem(25)
 
+    @include md
+      line-height: rem(58)
+      margin-bottom: rem(20)
+
+    @include sm
+      line-height: rem(48)
+      margin-bottom: rem(15)
+
+    @include xs
+      line-height: rem(38)
+      margin-bottom: rem(10)
   
 
   &__callback  
@@ -55,6 +125,9 @@
 
   .callback  
     @include aic
+    
+    @include lg
+      margin-bottom: 0
 
     &__btn
       color: $white
@@ -63,6 +136,12 @@
       @include aic-jcc
       display: inline-flex
       margin-left: rem(40)
+
+      @include lg
+        margin-left: rem(35)
+      
+      @include md
+        margin-left: rem(30)
 
       &:hover
         color: $primary
@@ -81,3 +160,19 @@
       margin-right: rem(15)
       transition: $transition 
 
+      @include lg
+        width: rem(45)
+        height: rem(45)
+        margin-right: rem(12)
+      
+      @include md
+        width: rem(40)
+        height: rem(40)
+        margin-right: rem(8)
+
+      svg
+        width: 70%
+        height: 70%
+
+  
+    
