@@ -21,29 +21,162 @@
 
     @include md
       margin-bottom: rem(40)
+
+    @include sm
+      margin-bottom: rem(30)
     
     
   &__wrap
-    @include aife-jfcsb
+    @include jfcsb
 
-    @include sm
+    @include lg
       flex-direction: column
       align-items: flex-start
 
   &__col
-    @include sm
+    @include lg
       width: 100%
 
     &:first-child
-      margin-right: rem(15)
-
-      @include sm
+      margin-right: rem(60)
+      position: relative
+      max-width: 100%
+      width: 100%
+      @include aife
+      
+      @include lg
         margin-right: 0
+    
+    &:last-child
+      max-width: rem(235)
+      width: 100%
+
+      @include lg
+        max-width: 100%
+      
+  &__img
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    border-radius: rem(30)
+    overflow: hidden
+
+    @include sm
+      position: relative
+      border-radius: rem(20)
+      @include aic-jcc
+      margin-bottom: rem(30) 
+    
+    @include xs
+      border-radius: rem(10)
 
   .title
     &_with-line
       margin-bottom: rem(30)  
 
+  &__text-wrap
+    background: #fafafa
+    border-radius: 0 rem(30) 0 0
+    padding-top: rem(15) 
+    padding-right: rem(20)
+    position: relative
+    
+    @include lg
+      margin-top: rem(100)
+
+    @include sm
+      border: none
+      border-radius: 0
+      padding: 0    
+      background: none  
+      margin: 0
+
+    
+    &:before,
+    &:after
+      position: absolute
+      content: ''
+      width: rem(30)
+      height: rem(30)
+      border-radius: 0 0 0 rem(30)
+      border-left: rem(10) solid #fafafa
+      border-bottom: rem(10) solid #fafafa
+
+      @include sm
+        display: none
+
+    &:before   
+      left: rem(-10)
+      bottom: calc( 100% - 10px )
+
+    &:after
+      left: calc( 100% - 10px )
+      bottom: rem(-10)
+
+  
+
+  &__btn-wrap
+    padding-top: rem(20)
+    padding-left: rem(20)
+    border-radius: rem(30) 0 0 0
+    background: #fafafa
+    position: relative
+
+    @include sm
+      border: none
+      border-radius: 0
+      padding: 0    
+      background: none
+      text-align: center
+      
+    &:before,
+    &:after
+      position: absolute
+      content: ''
+      width: rem(30)
+      height: rem(30)
+      border-right: rem(10) solid #fafafa
+      border-bottom: rem(10) solid #fafafa
+      border-radius: 0 0 rem(30) 0
+
+      @include sm
+        display: none
+
+
+    &:before   
+      bottom: rem(-10)
+      right: calc( 100% - 10px )
+
+    &:after
+      bottom: calc( 100% - 10px )
+      right: rem(-10)
+
+    .btn
+      padding: rem(10) rem(25) 
+      
+      @include lg
+        font-size: rem(16)
+        padding: rem(10) rem(15)
+
+      @include md
+        font-size: rem(13)
+        padding: rem(10) rem(15)
+        border-radius: rem(6)
+
+
+  &__overlay
+    @include aife-jfcsb
+    z-index: 10
+    width: 100%
+
+    @include sm
+      flex-direction: column
+      align-items: center 
+
+    
   &__text
     display: flex
 
@@ -60,8 +193,12 @@
       font-weight: 500 
       font-size: rem(16)
 
-      @include sm
+      @include lg
+        font-size: rem(14)
         line-height: normal
+
+      @include sm  
+        font-size: rem(15)
 
       br
         @include sm
@@ -69,35 +206,22 @@
 
   &__count-wrap
     @include aife-jfcfe
-
-    @include md
-      flex-direction: column-reverse
+    margin-top: rem(30)
 
     @include sm
-      margin-top: rem(30)
-      align-items: center
-
-    .btn
-      @include lg
-        font-size: rem(16)
-        padding: rem(10) rem(15)
-
-      @include md
-        font-size: rem(13)
-        padding: rem(10) rem(15)
-        border-radius: rem(6)
+      margin: rem(30) 0       
 
   &__count-list
     max-width: rem(235)
     width: 100%
     
     @include lg
-      max-width: rem(200)
-
-    @include sm
       max-width: 100%
       @include aifs-jfcsb
-      margin-bottom: rem(15)
+
+    @media (max-width: 460px)
+      flex-direction: column
+
 
 
   &__count-item
@@ -109,28 +233,28 @@
     @include fww
     align-items: center
     justify-content: flex-end
-    margin-bottom: rem(30)
+
+    @media (max-width: 460px)
+      margin-top: 0
+    
     
     @include lg
       font-size: rem(40)
       line-height: rem(45)
-      margin-bottom: rem(20)
+      width: calc( 33.33% - 5px )
+      justify-content: center
+      text-align: center
 
     @include md
       font-size: rem(30)
       line-height: rem(25)
-      margin-bottom: rem(5)
 
-    @include sm
-      justify-content: center
-      text-align: center
-      width: 33.33%
+    @media (max-width: 460px) 
+      width: 100%
+      margin-bottom: rem(15)
 
     &:last-child
       margin-bottom: 0
-      
-      @include md
-        margin-bottom: rem(10)
 
     span
       color: $secondary

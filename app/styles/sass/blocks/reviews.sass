@@ -17,7 +17,7 @@
     margin-bottom: rem(25)
 
   &__wrap
-    @include jfcsb
+    @include aife-jfcsb
 
   &__col
     @include lg
@@ -36,9 +36,6 @@
       @include sm
         max-width: 100%
 
-      .reviews__arch  
-        display: flex
-    
     &:last-child
       @include lg
         @include jfcfe
@@ -87,4 +84,35 @@
     .slider-btn
       width: rem(35)
       height: rem(35)
+
+
+  &__arch  
+    max-width: rem(480)
+
+    @include xs
+      max-width: rem(345)
     
+    @media (max-width: 375px)  
+      max-width: rem(290)
+
+    &:before
+      width: calc( 100% - 26px )
+      box-shadow: -100px 130px 100px rgba(254, 211, 105, 0.15), 100px 130px 100px rgba(139, 73, 244, 0.15)
+      border-radius: rem(186) rem(186) rem(56) rem(56)
+
+      @include lg
+        width: calc( 100% - 22px )
+        border-radius: rem(156) rem(156) rem(47) rem(47)
+
+      @include md
+        width: calc( 100% - 16px )
+        border-radius: rem(114) rem(114) rem(34) rem(34)
+
+      @include sm
+        width: calc( 100% - 26px )
+        border-radius: rem(186) rem(186) rem(56) rem(56)
+
+      @include xs
+        width: calc( 100% - 16px )
+        border-radius: rem(112) rem(112) rem(34) rem(34)
+

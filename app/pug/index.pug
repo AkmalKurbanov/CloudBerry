@@ -35,8 +35,8 @@ block main
                 p Оказываем полный цикл услуг от старта до продаж на Lorem Ipsum is <br> simply dummy text of the printing and typesetting industry  
 
                 .hero__callback.callback 
-                  a.btn(href="#") Подробнее
-                  a.callback__btn(href="#") 
+                  a.btn(href="#about" data-scroll) Подробнее
+                  a.callback__btn(href="#contacts" data-scroll) 
                     .callback__btn-icon 
                       svg(width='29' height='29' viewBox='0 0 29 29' fill='none' xmlns='http://www.w3.org/2000/svg')
                         path(d='M2.67962 2.98704L4.95956 0.707107C5.35008 0.316583 5.98325 0.316582 6.37377 0.707106L11.6262 5.95956C12.0168 6.35008 12.0168 6.98325 11.6262 7.37377L9.45291 9.54709C9.18244 9.81756 9.11538 10.2308 9.28644 10.5729C11.2642 14.5284 14.4716 17.7358 18.4271 19.7136C18.7692 19.8846 19.1824 19.8176 19.4529 19.5471L21.6262 17.3738C22.0168 16.9832 22.6499 16.9832 23.0404 17.3738L28.2929 22.6262C28.6834 23.0168 28.6834 23.6499 28.2929 24.0404L26.013 26.3204C23.9016 28.4317 20.559 28.6693 18.1703 26.8777L11.6286 21.9714C9.88504 20.6638 8.33622 19.115 7.02857 17.3714L2.12226 10.8297C0.330722 8.44096 0.568271 5.0984 2.67962 2.98704Z' fill='#FEBD2E')
@@ -45,15 +45,14 @@ block main
 
               .hero__flex-col(data-aos="fade-up")
                 .hero__arch.arch
-                  img(src="https://cdn.pixabay.com/photo/2023/05/30/15/43/koala-8028992_640.jpg", alt="")
-
-        .partners 
+                  img(src="images/dist/arch1.webp", alt="")
+        .partners(data-aos="fade-down")
           .container
             .partners__wrap 
               .swiper.partners-js
                 .swiper-wrapper
                   
-                  each partner in [1,2,3]
+                  each partner in [1,2,3,4,5]
                     .swiper-slide
                       .partners__item    
                         img(src="images/dist/partner"+partner+".webp", alt="")
@@ -85,19 +84,27 @@ block main
                 p Поиск производителей, согласования сделок, организация <br> логистическихпроцессов - все это мы возьмём на себя
 
             .about__wrap(data-aos="fade-up") 
-              .about__col
-                .title.title_h3.title_secondary.title_with-line Наша история
-
-                .about__text
-                  .icon 
-                    svg(width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg')
-                      path(d='M7.33331 9.16663V8.16663H6.33331V9.16663H7.33331ZM22.2095 25.4571C22.6001 25.8476 23.2332 25.8476 23.6238 25.4571C24.0143 25.0665 24.0143 24.4334 23.6238 24.0429L22.2095 25.4571ZM8.33331 20.1666V9.16663H6.33331V20.1666H8.33331ZM7.33331 10.1666H18.3333V8.16663H7.33331V10.1666ZM6.62621 9.87373L22.2095 25.4571L23.6238 24.0429L8.04042 8.45952L6.62621 9.87373Z' fill='white')
-                      path(d='M38.5 23.8334H26C24.1144 23.8334 23.1716 23.8334 22.5858 24.4192C22 25.0049 22 25.9478 22 27.8334V34.8334' stroke='white' stroke-width='2' stroke-linecap='round')
-                  p Поставки товаров под ключ, включающий в <br> себятранспортно-экспедиторские, а так же <br> консалтинговые услуги.Вам не потребуется <br> расширять свой штат сотрудников для <br> организациипоставки своими силами, заниматься <br> оформлением разрешительнойдокументации, <br> контролировать каждый этап поставки.
               
               .about__col
+                .about__overlay
+                  .about__text-wrap
+                    .title.title_h3.title_secondary.title_with-line Наша история
+
+                    .about__text
+                      .icon 
+                        svg(width='44' height='44' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg')
+                          path(d='M7.33331 9.16663V8.16663H6.33331V9.16663H7.33331ZM22.2095 25.4571C22.6001 25.8476 23.2332 25.8476 23.6238 25.4571C24.0143 25.0665 24.0143 24.4334 23.6238 24.0429L22.2095 25.4571ZM8.33331 20.1666V9.16663H6.33331V20.1666H8.33331ZM7.33331 10.1666H18.3333V8.16663H7.33331V10.1666ZM6.62621 9.87373L22.2095 25.4571L23.6238 24.0429L8.04042 8.45952L6.62621 9.87373Z' fill='white')
+                          path(d='M38.5 23.8334H26C24.1144 23.8334 23.1716 23.8334 22.5858 24.4192C22 25.0049 22 25.9478 22 27.8334V34.8334' stroke='white' stroke-width='2' stroke-linecap='round')
+                      p Поставки товаров под ключ, включающий в <br> себятранспортно-экспедиторские, а так же <br> консалтинговые услуги.Вам не потребуется <br> расширять свой штат сотрудников для <br> организациипоставки своими силами, заниматься <br> оформлением разрешительнойдокументации, <br> контролировать каждый этап поставки.
+
+                  .about__btn-wrap
+                    a.btn(href="#") Узнать подробнее  
+                
+                .about__img
+                  img(src="images/dist/about.webp", alt="")
+
+              .about__col
                 .about__count-wrap
-                  a.btn(href="#") Узнать подробнее  
                   .about__count-list
                     .about__count-item
                       span.counter(data-number="12") 
@@ -2900,8 +2907,7 @@ block main
 
               .reviews__col
                 .reviews__arch.arch
-                  img(src="https://u-stena.ru/upload/iblock/083/083013f2a90fd4fdd15dcdcf764ffc91.webp", alt="")
-
+                  img(src="images/dist/arch2.webp", alt="") 
         .callback#contacts(data-aos="fade-up")
           .container 
             .title.title_h2.title_secondary.title_with-thematic-icon

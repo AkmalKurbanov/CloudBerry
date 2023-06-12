@@ -3,11 +3,12 @@
   padding: rem(25) 0 0
   position: relative
   z-index: 1
-  overflow: hidden
+ 
   
   @include lg
     min-height: rem(500)
     padding: rem(90) 0 rem(30)
+    overflow: hidden
 
   &::before
     position: absolute
@@ -73,8 +74,28 @@
       @include sm  
         max-width: 100%
 
-      .arch
-        display: flex
+    .arch    
+        
+
+      &::before
+        height: calc( 100% - 40px )
+        box-shadow: -100px 50px 100px rgba(254, 211, 105, 0.15), 100px 50px 100px rgba(139, 73, 244, 0.15)
+        border-radius: rem(185) rem(185) rem(55) rem(55)
+        
+
+        @include lg
+          height: calc( 100% - 35px )
+          border-radius: rem(165) rem(165) rem(50) rem(50)
+
+        @include md
+          height: calc( 100% - 25px )
+          border-radius: rem(120) rem(120) rem(35) rem(35)
+
+        @include sm
+          height: calc( 100% - 28px )
+          border-radius: rem(130) rem(130) rem(40) rem(40)
+
+        
 
 
     &:last-child
@@ -87,8 +108,7 @@
   
   &__flex-wrap
     margin-top: rem(70)
-    @include jfcsb
-    align-items: stretch
+    @include aife-jfcsb
 
     @include lg
       margin-top: 0
@@ -129,6 +149,9 @@
     @include lg
       margin-bottom: 0
 
+    @include sm
+      justify-content: center  
+
     &__btn
       color: $white
       font-size: rem(17)
@@ -143,6 +166,12 @@
       @include md
         margin-left: rem(30)
 
+      @include sm
+        margin-left: rem(20)
+      
+      @include xs
+        margin-left: rem(15)
+
       &:hover
         color: $primary
 
@@ -154,19 +183,22 @@
       background: $white
       border-radius: 100%
       border: rem(2) solid $secondarylight
-      width: rem(50)
+      min-width: rem(50)
+      max-width: rem(50)
       height: rem(50)
       @include aic-jcc 
       margin-right: rem(15)
       transition: $transition 
 
       @include lg
-        width: rem(45)
+        min-width: rem(45)
+        max-width: rem(45)
         height: rem(45)
         margin-right: rem(12)
       
       @include md
-        width: rem(40)
+        min-width: rem(40)
+        max-width: rem(40)
         height: rem(40)
         margin-right: rem(8)
 
